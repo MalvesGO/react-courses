@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import CourseCard from '../CourseCard'
+
 import { courses } from '../../database';
 
-const Courses = ({handleAddItemToCart}) => {
+const Courses = () => {
 
     return (
     <main>
@@ -13,7 +14,6 @@ const Courses = ({handleAddItemToCart}) => {
           img={course.url} 
           title={course.name}
           price={course.price}
-          handleAddItemToCart={handleAddItemToCart}
           />
         )}
         </section>

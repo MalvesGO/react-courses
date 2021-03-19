@@ -1,6 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import { CartContext } from '../../contexts/CartContext';
 
-const Item = ({name, price, itemIndex, handleRemoveItemToCart}) => {
+const Item = ({name, price, itemIndex}) => {
+    
+    const {handleRemoveItemToCart} = useContext(CartContext);
+
     return (
         <li>
             <h2 className="course-name">{name}</h2>

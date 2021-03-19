@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import CardItems from '../src/CardItems';
 import Courses from '../src/Courses';
 import Navbar from '../src/NavBar'
@@ -7,27 +7,11 @@ import Navbar from '../src/NavBar'
 
 const ShopingCart = () => {
 
-  const [cart, setCart] = useState([])
-
-  function handleAddItemToCart(url, name, price){
-    const itemObject = { url, name, price }
-    setCart([...cart,itemObject])
-  }
-
-  function handleRemoveItemToCart(clickedItemIndex){
-    const filteredCart = cart.filter(cartItem => cart.indexOf(cartItem) != clickedItemIndex)
-    setCart(filteredCart)
-  }
-
-  function clearCart(){
-    setCart([])
-  }
-
     return (
       <> 
-      <Navbar cart={cart} clearCart={clearCart} />
-      <Courses handleAddItemToCart={handleAddItemToCart} />
-      <CardItems cart={cart} handleRemoveItemToCart={handleRemoveItemToCart} />      
+      <Navbar /> 
+       <Courses /> 
+       <CardItems />      
       </>
     )
 }

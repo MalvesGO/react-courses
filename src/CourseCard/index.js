@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CartContext } from '../../contexts/CartContext';
 
-const CourseCard = ({img, title, price, handleAddItemToCart}) => {
+const CourseCard = ({img, title, price}) => {
+
+    const {handleAddItemToCart} = useContext(CartContext)
     return (
         <div className="card">
             <img src={img} alt=""/>

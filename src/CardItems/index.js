@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CartContext } from '../../contexts/CartContext';
 import Item from '../Item'
 
-const CardItems = ({cart, handleRemoveItemToCart}) => {
+const CardItems = () => {
+
+    const {cart} = useContext(CartContext);
+
     return (
         <footer>
             <ul>
@@ -10,8 +14,7 @@ const CardItems = ({cart, handleRemoveItemToCart}) => {
                     key={index}
                     itemIndex={index}
                     name={cartItem.name} 
-                    price={cartItem.price} 
-                    handleRemoveItemToCart={handleRemoveItemToCart}
+                    price={cartItem.price}                     
                     />
                 )}
             </ul>
