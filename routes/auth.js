@@ -127,6 +127,10 @@ module.exports = (server) => {
     );
   }
 
+  server.get("/marcelo", async (req, res) => {
+    console.log("to aqui");
+  });
+
   server.get("/auth/verify", async (req, res) => {
     var email = req.query.email;
     var hash = req.query.hash;
